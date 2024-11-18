@@ -60,6 +60,12 @@ public class AccountsController {
                 .body(new ResponseDto(AccountsConstants.STATUS_201, AccountsConstants.MESSAGE_201));
     }
 
+    @GetMapping("/hello")
+    public ResponseEntity<ResponseDto> sayHello() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(new ResponseDto(AccountsConstants.STATUS_201, "Hello World"));
+    }
     @Operation(
             summary = "Fetch Account Details REST API",
             description = "REST API to fetch Customer &  Account details based on a mobile number"
