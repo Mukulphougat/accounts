@@ -4,21 +4,12 @@ phases:
   install:
     runtime-versions:
       java: corretto11
-    commands:
-      - echo "Installing dependencies"
-      - mvn install -DskipTests
-  pre_build:
-    commands:
-      - echo "Running pre-build steps"
-      - mvn clean
   build:
     commands:
-      - echo "Building the application"
-      - mvn package -DskipTests
+      - mvn clean install
   post_build:
     commands:
-      - echo "Running post-build steps"
-      - echo "Build completed successfully"
+      - echo Build completed
 artifacts:
   files:
     - target/*.jar
